@@ -290,6 +290,11 @@ require('lazy').setup({
     end,
   },
 
+  { -- added by ARE to enable smooth navigation within tmux
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
