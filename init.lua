@@ -873,25 +873,64 @@ require('lazy').setup({
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+  -- { -- You can easily change to a different colorscheme.
+  --   -- Change the name of the colorscheme plugin below, and then
+  --   -- change the command in the config to whatever the name of that colorscheme is.
+  --   --
+  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   'folke/tokyonight.nvim',
+  --   -- other options to consider:
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   config = function()
+  --     ---@diagnostic disable-next-line: missing-fields
+  --     require('tokyonight').setup {
+  --       styles = {
+  --         comments = { italic = false }, -- Disable italics in comments
+  --       },
+  --     }
+  --
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     vim.cmd.colorscheme 'tokyonight-night'
+  --   end,
+  -- },
+  -- { -- solarized colortheme
+  --   -- https://github.com/maxmx03/solarized.nvim
+  --   'maxmx03/solarized.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   ---@type solarized.config
+  --   opts = {},
+  --   config = function(_, opts)
+  --     vim.o.termguicolors = true
+  --     vim.o.background = 'dark'
+  --     require('solarized').setup(opts)
+  --     vim.cmd.colorscheme 'solarized'
+  --   end,
+  -- },
+  -- {
+  --   --   -- https://github.com/navarasu/onedark.nvim
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000, -- Make sure it loads before other plugins
+  --   config = function()
+  --     require('onedark').setup {
+  --       style = 'dark', -- Options: dark, darker, cool, deep, warm, warmer, light
+  --     }
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+  {
+    -- https://github.com/catppuccin/nvim
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
+      require('catppuccin').setup {
+        flavour = 'mocha', -- Options, latte, frappe, macciato, mocha
+        transparent_background = false,
+        vim.cmd.colorscheme 'catppuccin',
       }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 
